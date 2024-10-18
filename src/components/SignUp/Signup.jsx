@@ -56,7 +56,7 @@ const Signup = ({ setIsLogin }) => {
     e.preventDefault();
     setLoading(true); // Start spinner when signup is clicked
     try {
-      const response = await axios.post('https://auth4hash.lovestoblog.com/signup', { name, email, password }); // Add name to the request
+      const response = await axios.post('https://server-auth-66bx.onrender.com/signup', { name, email, password }); // Add name to the request
       setErrorMessage("");
       toast.success("Signup successful!");
       setIsLogin(true);
