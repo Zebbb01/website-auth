@@ -18,16 +18,16 @@ const Dashboard = ({ user, logout }) => {
             <th>Email</th>
             <th>Password</th>
             <th>Hashed Password</th>
-            <th>Pepper</th> {/* Display pepper */}
+            <th>Pepper</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>{user.name}</td>
             <td>{user.email}</td>
-            <td>{user.password}</td>
+            <td>{user.password}</td> {/* Display the password */}
             <td>{user.hashed_password}</td>
-            <td>{user.pepper}</td> {/* Show pepper */}
+            <td>{user.pepper}</td>
           </tr>
         </tbody>
       </table>

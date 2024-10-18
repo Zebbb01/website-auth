@@ -20,6 +20,10 @@ const Signup = ({ setIsLogin }) => {
     setPasswordStrength(calculatePasswordStrength(newPassword));
   };
 
+  const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
   const calculatePasswordStrength = (password) => {
     let strength = 0;
     if (password.length >= 8) strength += 1;
@@ -54,9 +58,14 @@ const Signup = ({ setIsLogin }) => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    setLoading(true); // Start spinner when signup is clicked
+    if (!isValidEmail(email)) {
+    setErrorMessage("Please enter a valid email");
+    return;
+    }
+    setLoading(true);
     try {
       const response = await axios.post('https://server-auth-66bx.onrender.com/signup', { name, email, password }); // Add name to the request
+      console.log("Signup Response.", response.data);
       setErrorMessage("");
       toast.success("Signup successful!");
       setIsLogin(true);
@@ -100,7 +109,7 @@ const Signup = ({ setIsLogin }) => {
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </span>
           </div>
-          {errorMessage && <div className="error-message">{errorMessage}</div>}
+          
           {password && (
             <div className="password-strength">
               <div
@@ -108,6 +117,7 @@ const Signup = ({ setIsLogin }) => {
                 style={{ width: `${(passwordStrength / 5) * 100}%` }}
               />
               <span>{getStrengthLabel(passwordStrength)}</span>
+              {errorMessage && <div className="error-message2">{errorMessage}</div>}
             </div>
           )}
           <button type="submit">Sign Up</button>

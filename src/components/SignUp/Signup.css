@@ -1,4 +1,12 @@
 
+.error-message2 {
+  color: rgb(196, 8, 8);
+  font-size: 14px;
+  margin-top: 5px; /* Ensure it doesn't push the icon or input down */
+  bottom: 3px; /* Position the error message just below the input */
+  left: 0;
+  width: 100%; /* Span across the width of the container */
+}
 .password-strength {
   font-size: 14px;
   padding: 5px;
