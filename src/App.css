@@ -112,6 +112,45 @@ button:hover {
   color: #F2E8C6;
 }
 
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.padlock-icon {
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  margin-right: 5px; /* Space between image and text */
+  background-color: #FED8B1;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #FED8B1;
+  margin-left: 80px;
+}
+
+.authText{
+  font-size: 30px;
+  font-weight: bold;
+  color: #FED8B1;
+  margin-top: 60px;
+  margin-bottom: 0px;
+}
+
+.divider {
+  border: 0;
+  height: 2px;
+  background-color: #8b8b8a;
+  margin: -25px 0; /* Add spacing between elements */
+  width: 100%;
+}
+
 /* Media Queries for smaller screens */
 @media (max-width: 768px) {
   .form-container {
